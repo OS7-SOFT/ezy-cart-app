@@ -6,7 +6,7 @@ import '../entities/product_entity.dart';
 class GetAllProducts {
   final ProductRepository repository;
 
-  GetAllProducts(this.repository);
+  GetAllProducts({required this.repository});
 
   Future<Either<Failure, List<ProductEntity>>> call() async {
     return await repository.getAllProducts();

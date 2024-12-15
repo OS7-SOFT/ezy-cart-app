@@ -6,7 +6,7 @@ import 'package:ezy_cart_app/features/category/domain/repositories/category_repo
 class GetAllCategories {
   final CategoryRepository repository;
 
-  GetAllCategories(this.repository);
+  GetAllCategories({required this.repository});
 
   Future<Either<Failure, List<CategoryEntity>>> call() async {
     return await repository.getAllCategories();
@@ -16,7 +16,7 @@ class GetAllCategories {
 class GetCategoryById {
   final CategoryRepository repository;
 
-  GetCategoryById(this.repository);
+  GetCategoryById({required this.repository});
 
   Future<Either<Failure, CategoryEntity>> call(int id) async {
     return await repository.getCategoryById(id);
@@ -26,7 +26,7 @@ class GetCategoryById {
 class AddCategory {
   final CategoryRepository repository;
 
-  AddCategory(this.repository);
+  AddCategory({required this.repository});
 
   Future<Either<Failure, Unit>> call(CategoryEntity category) async {
     return await repository.addCategory(category);
@@ -36,7 +36,7 @@ class AddCategory {
 class UpdateCategory {
   final CategoryRepository repository;
 
-  UpdateCategory(this.repository);
+  UpdateCategory({required this.repository});
 
   Future<Either<Failure, Unit>> call(int id, CategoryEntity category) async {
     return await repository.updateCategory(id, category);
@@ -46,7 +46,7 @@ class UpdateCategory {
 class DeleteCategory {
   final CategoryRepository repository;
 
-  DeleteCategory(this.repository);
+  DeleteCategory({required this.repository});
 
   Future<Either<Failure, Unit>> call(int id) async {
     return await repository.deleteCategory(id);
