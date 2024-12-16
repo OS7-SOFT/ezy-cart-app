@@ -1,4 +1,5 @@
-import 'package:ezy_cart_app/main.dart';
+import 'package:ezy_cart_app/core/screens/home_screen.dart';
+import 'package:ezy_cart_app/core/screens/introduction_screen.dart';
 import 'package:go_router/go_router.dart';
 
 final GoRouter router = GoRouter(
