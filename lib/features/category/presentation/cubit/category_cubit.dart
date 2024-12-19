@@ -7,9 +7,11 @@ part 'category_state.dart';
 
 class CategoryCubit extends Cubit<CategoryState> {
   final GetAllCategories getAllCategories;
-  CategoryCubit(this.getAllCategories) : super(CategoryInitial());
+  CategoryCubit(this.getAllCategories) : super(CategoryInitial()) {
+    fetchAllCategroy();
+  }
 
-  Future<void> fetchAllProduct() async {
+  Future<void> fetchAllCategroy() async {
     emit(CategoryLoading());
     final result = await getAllCategories();
     result.fold(

@@ -6,7 +6,7 @@ class ProductEntity extends Equatable {
   final double price;
   final String description;
   final String categoryName;
-  final List<String> images;
+  final List<String>? images;
 
   const ProductEntity({
     this.id,

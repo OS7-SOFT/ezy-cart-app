@@ -19,8 +19,10 @@ class ProductCubit extends Cubit<ProductState> {
   Future<void> fetchAllProducts() async {
     emit(ProductLoading());
     final result = await getAllProducts();
-    result.fold((failure) => emit(ProductError(message: failure.getMessage)),
-        (products) => emit(ProductSuccess(products: products)));
+    result.fold(
+        (failure) => emit(ProductError(message: failure.getMessage)),
+        (List<ProductEntity> products) =>
+            emit(ProductSuccess(products: products)));
   }
 
   Future<void> fetchProductsById(int id) async {

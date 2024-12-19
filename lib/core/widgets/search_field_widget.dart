@@ -8,9 +8,9 @@ class SearchFieldWidget extends StatelessWidget {
     return Container(
         decoration: const BoxDecoration(boxShadow: <BoxShadow>[
           BoxShadow(
-              blurRadius: 9,
+              blurRadius: 3,
               color: Color.fromARGB(34, 0, 0, 0),
-              offset: Offset(0, 5))
+              offset: Offset(0, 3))
         ]),
         child: _buildTextFormField(context));
   }
@@ -27,7 +27,7 @@ class SearchFieldWidget extends StatelessWidget {
             border: InputBorder.none,
             filled: true,
             fillColor: Colors.white,
-            hintText: "Search Book",
+            hintText: "Search any Product",
             hintStyle: TextStyle(fontSize: 17, color: Colors.grey[500]),
             prefixIcon: const Icon(Icons.search)));
   }

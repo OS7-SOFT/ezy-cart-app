@@ -30,7 +30,9 @@ class ProductModel extends ProductEntity {
       price: (json[kProductPrice] as num).toDouble(),
       description: json[kProductDescription],
       categoryName: json[kCategroy][kCategoryName],
-      images: List<String>.from(json[kCategoryImage]),
+      images:
+          (json[kCategoryImage] as List?)?.map((e) => e.toString()).toList() ??
+              [],
     );
   }
 

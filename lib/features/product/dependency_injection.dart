@@ -30,11 +30,4 @@ Future<void> setupDependencyInjection() async {
       () => ProductRemoteDataSourceImpl(dio: Dio()));
   getIt.registerLazySingleton<ProductLocalDataSource>(
       () => ProductLocalDataSourceImpl(sharedPreferences: getIt()));
-
-  getIt.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(getIt()));
-
-  SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-  getIt.registerLazySingleton(() => sharedPreferences);
-
-  getIt.registerLazySingleton(() => InternetConnectionChecker.createInstance());
 }
